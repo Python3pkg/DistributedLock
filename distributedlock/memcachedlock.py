@@ -31,7 +31,7 @@ class MemcachedLock(object):
                 break
                 
             if added == 0 and not (added is False):
-                raise RuntimeError(u"Error calling memcached add! Is memcached up and configured? memcached_client.add returns %s" % repr(added))
+                raise RuntimeError("Error calling memcached add! Is memcached up and configured? memcached_client.add returns %s" % repr(added))
             
             if not blocking:   # and not added
                 return False

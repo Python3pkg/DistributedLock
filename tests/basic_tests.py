@@ -39,7 +39,7 @@ class TestDistributedLock(object):
                 raise myError
                 
             assert False, "Never run"
-        except Exception, e:
+        except Exception as e:
             assert e is myError
             assert lock.acquired_called == 1
             assert lock.release_called == 1
@@ -70,6 +70,6 @@ class TestDistributedLock(object):
             with distributedlock.distributedlock('ola', lock=lock):
                 assert False, 'Never can run'
             assert False, 'Never can run'
-        except Exception, e:
+        except Exception as e:
             assert e is myerror
 
